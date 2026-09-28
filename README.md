@@ -1,3 +1,4 @@
+
 # 🎵 Music Analytics Data Pipeline
 
 An end-to-end **Music Analytics Data Engineering project** that generates simulated music listening events, ingests them into **Snowflake**, transforms and tests the data using **dbt**, and presents business insights through an interactive **Streamlit dashboard**.
@@ -1032,3 +1033,4 @@ Planned enhancements:
 * Advanced user segmentation
 * Recommendation-system analytics
 * Real-time alerts for unusual listening patterns
+
