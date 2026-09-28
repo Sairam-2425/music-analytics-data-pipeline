@@ -1,0 +1,15 @@
+dbt_music:
+  target: dev
+
+  outputs:
+    dev:
+      type: snowflake
+      type: snowflake
+      account:**********
+      user: *************
+      password: ***********
+      role: ACCOUNTADMIN
+      warehouse: COMPUTE_WH
+      database: ********
+      schema: DBT_DEV
+      threads: 4

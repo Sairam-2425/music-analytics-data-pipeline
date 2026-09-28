@@ -1,0 +1,14 @@
+SELECT
+    EVENT_ID,
+    USER_ID,
+    SONG_ID,
+    SONG_NAME,
+    ARTIST_ID,
+    ARTIST_NAME,
+    GENRE,
+    EVENT_TYPE,
+    DURATION_SECONDS,
+    DEVICE,
+    COUNTRY,
+    EVENT_TIMESTAMP
+FROM {{ source('music_raw', 'MUSIC_EVENTS') }}

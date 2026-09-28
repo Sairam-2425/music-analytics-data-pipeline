@@ -1,0 +1,11 @@
+SELECT
+    EVENT_DATE,
+
+    COUNT(DISTINCT USER_ID) AS DAILY_ACTIVE_LISTENERS
+
+FROM {{ ref('int_user_activity') }}
+
+WHERE EVENT_TYPE = 'play'
+
+GROUP BY
+    EVENT_DATE

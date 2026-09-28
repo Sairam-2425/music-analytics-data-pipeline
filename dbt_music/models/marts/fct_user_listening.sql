@@ -1,0 +1,31 @@
+SELECT
+    USER_ID,
+    USER_NAME,
+    COUNTRY,
+    DEVICE,
+
+    COUNT_IF(EVENT_TYPE = 'play') AS TOTAL_PLAYS,
+
+    COUNT_IF(EVENT_TYPE = 'like') AS TOTAL_LIKES,
+
+    COUNT_IF(EVENT_TYPE = 'skip') AS TOTAL_SKIPS,
+
+    COUNT(DISTINCT SONG_ID) AS UNIQUE_SONGS_LISTENED,
+
+    COUNT(DISTINCT ARTIST_ID) AS UNIQUE_ARTISTS_LISTENED,
+
+    SUM(
+        CASE
+            WHEN EVENT_TYPE = 'play'
+            THEN DURATION_SECONDS
+            ELSE 0
+        END
+    ) / 60.0 AS TOTAL_LISTENING_MINUTES
+
+FROM {{ ref('int_user_activity') }}
+
+GROUP BY
+    USER_ID,
+    USER_NAME,
+    COUNTRY,
+    DEVICE

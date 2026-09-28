@@ -1,0 +1,16 @@
+version: 2
+
+sources:
+  - name: music_raw
+    database: MUSIC_ANALYTICS
+    schema: RAW
+
+    tables:
+
+      - name: USERS
+
+      - name: ARTISTS
+
+      - name: SONGS
+
+      - name: MUSIC_EVENTS

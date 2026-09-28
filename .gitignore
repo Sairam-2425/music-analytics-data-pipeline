@@ -1,0 +1,39 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+
+# Streamlit secrets
+.streamlit/secrets.toml
+streamlit_app/.streamlit/secrets.toml
+
+# dbt
+target/
+dbt_packages/
+logs/
+.partial_parse.msgpack
+
+# dbt local credentials
+profiles.yml
+
+# Environment variables
+.env
+.env.*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Snowflake / credentials
+*.pem
+*.key
+
+# dbt credentials
+dbt_music/profiles.yml

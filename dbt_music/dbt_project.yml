@@ -1,0 +1,19 @@
+name: 'dbt_music'
+version: '1.0.0'
+config-version: 2
+
+profile: 'dbt_music'
+
+model-paths: ["models"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+
+models:
+  dbt_music:
+    +materialized: table
+  intermediate:
+      +materialized: view
+
+      marts:
+      +materialized: table
+

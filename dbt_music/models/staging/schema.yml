@@ -1,0 +1,32 @@
+version: 2
+
+models:
+
+  - name: stg_users
+    columns:
+      - name: USER_ID
+        data_tests:
+          - not_null
+          - unique
+  - name: stg_artists
+    columns:
+      - name: ARTIST_ID
+        data_tests:
+          - not_null
+          - unique
+  - name: stg_songs
+    columns:
+      - name: SONG_ID
+        data_tests:
+          - not_null
+          - unique
+  - name: stg_music_events
+    columns:
+      - name: EVENT_ID
+        data_tests:
+          - not_null
+          - unique
+
+
+
+

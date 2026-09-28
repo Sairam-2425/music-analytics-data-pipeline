@@ -1,0 +1,31 @@
+SELECT
+    SONG_ID,
+    SONG_NAME,
+    ARTIST_ID,
+    ARTIST_NAME,
+    GENRE,
+
+    COUNT_IF(EVENT_TYPE = 'play') AS TOTAL_PLAYS,
+
+    COUNT_IF(EVENT_TYPE = 'like') AS TOTAL_LIKES,
+
+    COUNT_IF(EVENT_TYPE = 'skip') AS TOTAL_SKIPS,
+
+    COUNT(DISTINCT USER_ID) AS UNIQUE_LISTENERS,
+
+    SUM(
+        CASE
+            WHEN EVENT_TYPE = 'play'
+            THEN DURATION_SECONDS
+            ELSE 0
+        END
+    ) / 60.0 AS TOTAL_LISTENING_MINUTES
+
+FROM {{ ref('int_user_activity') }}
+
+GROUP BY
+    SONG_ID,
+    SONG_NAME,
+    ARTIST_ID,
+    ARTIST_NAME,
+    GENRE
